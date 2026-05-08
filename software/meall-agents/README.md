@@ -14,3 +14,13 @@ MeAll Agents is the official agent platform that enables seamless automation and
 | Linux | x86 | `MeAllAgents-x86.AppImage` |
 
 > **Note:** Download the installer that matches your operating system and CPU architecture.
+
+## Version tracking
+
+The mirrored upstream version is recorded in `VERSION.txt`.
+
+To refresh this folder from the latest release in `meall-tech/agents`, run:
+
+```bash
+./scripts/sync-meall-agents-release.sh --pull --commit --push
+```
