@@ -1,0 +1,53 @@
+name: Sync MeAll Agents assets
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Force a refresh even if VERSION.txt matches the latest release
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-meall-agents
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+          token: ${{ secrets.MEALL_RELEASE_SYNC_TOKEN }}
+
+      - name: Prepare git and Git LFS
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git lfs install
+
+      - name: Check out main branch
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+
+      - name: Sync mirrored release assets
+        env:
+          GH_TOKEN: ${{ secrets.MEALL_RELEASE_SYNC_TOKEN }}
+          FORCE_SYNC: ${{ github.event_name == 'workflow_dispatch' && inputs.force && '1' || '0' }}
+        run: |
+          set -euo pipefail
+          args=(--pull --commit --push)
+          if [[ "$FORCE_SYNC" == "1" ]]; then
+            args=(--force "${args[@]}")
+          fi
+          ./scripts/sync-meall-agents-release.sh "${args[@]}"

@@ -31,6 +31,22 @@ That command:
 - updates `software/meall-agents/VERSION.txt`,
 - commits and pushes the result.
 
+## Scheduled polling workflow
+
+This repository should keep a scheduled GitHub Actions workflow that polls `meall-tech/agents` every **12 hours** and runs the same sync script automatically.
+
+- Workflow file: `.github/workflows/sync-meall-agents.yml`
+- Trigger cadence: `0 */12 * * *`
+- Manual trigger: supported through `workflow_dispatch`
+- Secret required: `MEALL_RELEASE_SYNC_TOKEN`
+
+`MEALL_RELEASE_SYNC_TOKEN` should be a token that can:
+
+- read releases from the private `meall-tech/agents` repository,
+- push commits to `meall-tech/assets`.
+
+The workflow checks out `main`, fast-forwards it, runs the sync script, and only creates a commit when the mirrored assets actually change.
+
 ## Expected mirrored files
 
 Only these release assets should be mirrored into `software/meall-agents/`:

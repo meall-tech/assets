@@ -24,3 +24,5 @@ To refresh this folder from the latest release in `meall-tech/agents`, run:
 ```bash
 ./scripts/sync-meall-agents-release.sh --pull --commit --push
 ```
+
+This repository also includes a scheduled workflow that polls for updates every 12 hours.
