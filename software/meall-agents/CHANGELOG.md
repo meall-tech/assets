@@ -1,5 +1,3 @@
-# Changelog — MeAll Agents
-
 All notable changes to MeAll Agents are here. Releases are listed from newest to oldest.
 
 ---
