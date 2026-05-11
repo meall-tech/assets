@@ -25,11 +25,6 @@ Sandboxes with special characters in their display name (slashes, backslashes, e
 
 ---
 
-
-All notable changes to MeAll Agents are here. Releases are listed from newest to oldest.
-
----
-
 ## 0.15.1 — May 11, 2026
 
 A focused quality release — stability fixes, better Docker infrastructure, and a long-standing UX fix.
