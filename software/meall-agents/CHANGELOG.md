@@ -1,3 +1,31 @@
+## 0.15.2 — May 11, 2026
+
+Two solid improvements — an important quality-of-life feature and a Docker recovery fix.
+
+### Update Check & Auto-Download
+
+MeAll Agents now checks for new versions automatically. The app periodically fetches the latest version from the assets server and notifies you when an update is available.
+
+- **Automatic background checks** — the app checks for new versions a couple of times per day and on first launch after installing
+- **One-click update** — when an update is available, a clear prompt in the About modal lets you download the right installer for your platform (macOS ARM64, macOS x64, Windows, Linux)
+- **Manual check** — click "Check for updates" in the About modal anytime to trigger a check on demand, with a timestamp of the last check shown below the button
+
+### Docker Sandbox Recovery Fix
+
+Sandboxes with special characters in their display name (slashes, backslashes, etc.) could not be properly recovered. This is now fixed.
+
+- **Safe name slugging** — display names with special characters are converted to safe Docker container names using a stable hash so the app can always find the right container
+- **Label-based lookup** — containers are now tracked by a `meall-agent` label, making recovery reliable regardless of what characters the display name contains
+- **Existing sandboxes migrated** — recovery logic covers sandboxes created before this fix too
+
+### Bug Fixes
+
+- **Update check auto-trigger** — when opening the About modal with no prior check on record, an update check fires immediately so you are never looking at stale data
+- **Docker sandbox recovery** — sandboxes with unsafe characters in their display name are now properly recoverable
+
+---
+
+
 All notable changes to MeAll Agents are here. Releases are listed from newest to oldest.
 
 ---
