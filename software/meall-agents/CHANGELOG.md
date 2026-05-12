@@ -1,3 +1,20 @@
+## 0.15.4 — May 12, 2026
+
+A focused bug fix release — Cockpit launch is working reliably again and log overhead in packaged builds has been cleaned up.
+
+### Cockpit Launch Restored
+
+The `getNerveUrl` function had a broken env var parsing block that was preventing Cockpit from launching after rebuild. Fixed by removing the leftover garbage block and ensuring the `NERVE_INSTALL_DIR/.env` file is written with proper JSON config handling.
+
+### Packaged Log Overhead Trimmed
+
+In production builds, backend and web process stdout/stderr were being mirrored to the main process console regardless of whether there was anything to log. Output is now only mirrored when `MEALL_MIRROR_CHILD_STDOUT=true` is set — dev mode or explicit opt-in.
+
+### JSON Config Writes Fixed
+
+Two `fs.writeFileSync` calls in the container-side Node scripts were using `\\n` instead of `\n` for the trailing newline. Corrected.
+
+---
 ## 0.15.3 — May 12, 2026
 
 Cockpit reliability improvements and polished macOS packaging.
