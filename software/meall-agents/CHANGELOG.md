@@ -1,3 +1,32 @@
+## 0.15.3 — May 12, 2026
+
+Cockpit reliability improvements and polished macOS packaging.
+
+### Cockpit Cron Access Restored After Rebuild
+
+After a sandbox rebuild, the `cron` tool was missing from `gateway.tools.allow`, silently breaking scheduled agent runs. Fixed by asserting the required tools (`cron`, `gateway`, `sessions_spawn`) during `finalizeConfiguration`, and by repairing missing tools in the container before Cockpit launches — with a sandbox restart if needed so the change takes effect immediately.
+
+### Docker Gateway Restart Now Works Reliably
+
+`startOpenClawGateway` was calling `docker restart` with the display name, which failed silently for sandboxes with special characters. Now uses `docker.restartVM()` with proper slugging and label-based lookup.
+
+### Build Error Output Improved
+
+Vendored Nerve builds now produce clear, actionable error messages instead of raw stdout/stderr with no context.
+
+### Rebuild Flow Uses finalizeConfiguration
+
+The rebuild endpoint now calls `finalizeConfiguration` directly, handling permissions, gateway tools, ModelRelay, and doctor fixes in the right order.
+
+### macOS Packaging
+
+- DMG with branded background image, repositioned app icon, and Applications link
+- **Quick Install script** — a `.command` file inside the DMG runs a guided installation to Applications with progress indicator
+- Proper `icon.icns` bundle and automated icon build pipeline
+- Large Nerve dev dependencies excluded from the packaged app
+
+---
+
 ## 0.15.2 — May 11, 2026
 
 Two solid improvements — an important quality-of-life feature and a Docker recovery fix.
@@ -22,6 +51,11 @@ Sandboxes with special characters in their display name (slashes, backslashes, e
 
 - **Update check auto-trigger** — when opening the About modal with no prior check on record, an update check fires immediately so you are never looking at stale data
 - **Docker sandbox recovery** — sandboxes with unsafe characters in their display name are now properly recoverable
+
+---
+
+
+All notable changes to MeAll Agents are here. Releases are listed from newest to oldest.
 
 ---
 
