@@ -1,8 +1,6 @@
 name: Sync MeAll Agents assets
 
 on:
-  schedule:
-    - cron: '0 */12 * * *'
   workflow_dispatch:
     inputs:
       force:
