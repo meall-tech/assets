@@ -1,3 +1,8 @@
+## 0.16.1 — May 27, 2026
+
+MeAll Agents 0.16.1 is a focused stability patch for the 0.16 line. This release tightens Cockpit reliability when provider runs fail, prevents a known broken DeepSeek v4 route from being selected by default in ModelRelay, and preserves more operational guidance for future maintenance.
+
+---
 ## 0.16.0 — May 26, 2026
 
 MeAll Agents 0.16.0 ships sandbox updates, dark mode by default, and a tighter Cockpit experience. The biggest change: when a new OpenClaw version lands, your sandbox tells you — and updating is one click. No more manual container rebuilds from the terminal.
