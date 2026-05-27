@@ -10,7 +10,7 @@ Use this workflow whenever you are asked to verify or refresh the public MeAll A
 2. Fast-forward from `origin/main`.
 3. Read `software/meall-agents/VERSION.txt` if it exists. If it does not exist, treat the sync as required.
 4. Query the latest GitHub release in `meall-tech/agents` with `gh`.
-5. If the latest upstream version is newer than the tracked version, download the required binaries, replace the mirrored files in `software/meall-agents/`, and update `VERSION.txt`.
+5. If the latest upstream version is newer than the tracked version, download the required binaries, replace the mirrored files in `software/meall-agents/`, update `VERSION.txt`, and refresh `CHANGELOG.md`.
 6. Commit and push the result on `main`.
 
 ## Preferred command
@@ -29,6 +29,7 @@ That command:
 - downloads only the mirrored public binaries when an update is needed,
 - normalizes the filenames to this repository's expected structure,
 - updates `software/meall-agents/VERSION.txt`,
+- refreshes `software/meall-agents/CHANGELOG.md` from the `meall-tech/agents` release summary block,
 - commits and pushes the result.
 
 ## Sync workflow trigger
@@ -70,5 +71,6 @@ Ignore the zip archives, portable executable, checksum file, and any other non-m
 After a sync, confirm that:
 
 - `software/meall-agents/VERSION.txt` matches the upstream release tag without a leading `v`,
+- `software/meall-agents/CHANGELOG.md` starts with the mirrored version and summary from the `meall-tech/agents` release body,
 - the four mirrored binaries exist with the expected filenames,
 - `git status --short` only shows the intended asset updates and version bump.

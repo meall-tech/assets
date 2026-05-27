@@ -18,6 +18,7 @@ MeAll Agents is the official agent platform that enables seamless automation and
 ## Version tracking
 
 The mirrored upstream version is recorded in `VERSION.txt`.
+The top entry in `CHANGELOG.md` is mirrored from the `meall-tech/agents` GitHub release body by copying the summary block between the first H1 heading and the first horizontal rule.
 
 To refresh this folder from the latest release in `meall-tech/agents`, run:
 

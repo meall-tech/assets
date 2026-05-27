@@ -1,3 +1,9 @@
+## 0.16.0 — May 26, 2026
+
+MeAll Agents 0.16.0 ships sandbox updates, dark mode by default, and a tighter Cockpit experience. The biggest change: when a new OpenClaw version lands, your sandbox tells you — and updating is one click. No more manual container rebuilds from the terminal.
+
+---
+
 ## 0.15.4 — May 12, 2026
 
 A focused bug fix release — Cockpit launch is working reliably again and log overhead in packaged builds has been cleaned up.
@@ -636,4 +642,3 @@ Foundation release. End-to-end setup with core features working.
 - Keep-alive mechanisms
 
 Everything works. First version ready for testing and feedback.
-

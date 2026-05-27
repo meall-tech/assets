@@ -7,6 +7,7 @@ UPSTREAM_REPO="meall-tech/agents"
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 ASSET_DIR="$ROOT_DIR/software/meall-agents"
 VERSION_FILE="$ASSET_DIR/VERSION.txt"
+CHANGELOG_FILE="$ASSET_DIR/CHANGELOG.md"
 COMMIT_TRAILER="Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
 
 FORCE=0
@@ -61,6 +62,113 @@ def tokenize(value: str):
 left = tokenize(sys.argv[1])
 right = tokenize(sys.argv[2])
 sys.exit(0 if left > right else 1)
+PY
+}
+
+format_release_date() {
+  python3 - "$1" <<'PY'
+from datetime import datetime
+import sys
+
+value = sys.argv[1].strip()
+if not value:
+    raise SystemExit("error: missing published release date")
+
+dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+print(f"{dt.strftime('%B')} {dt.day}, {dt.year}")
+PY
+}
+
+extract_release_summary() {
+  local body
+  body="$(cat)"
+
+  RELEASE_BODY="$body" python3 - <<'PY'
+import os
+import re
+
+body = os.environ["RELEASE_BODY"].replace("\r\n", "\n")
+lines = body.split("\n")
+
+h1_index = next((i for i, line in enumerate(lines) if re.match(r"^#\s+\S", line)), None)
+if h1_index is None:
+    raise SystemExit("error: release body is missing a first H1 heading")
+
+hr_re = re.compile(r"^\s{0,3}([-*_])(?:\s*\1){2,}\s*$")
+hr_index = next((i for i in range(h1_index + 1, len(lines)) if hr_re.match(lines[i])), None)
+if hr_index is None:
+    raise SystemExit("error: release body is missing a horizontal rule after the summary block")
+
+block = lines[h1_index + 1:hr_index]
+while block and not block[0].strip():
+    block.pop(0)
+while block and not block[-1].strip():
+    block.pop()
+
+if block and re.match(r"^\*\*Release Date:\*\*", block[0].strip()):
+    block.pop(0)
+    while block and not block[0].strip():
+        block.pop(0)
+
+summary = "\n".join(block).strip()
+if not summary:
+    raise SystemExit("error: release body summary block is empty")
+
+print(summary)
+PY
+}
+
+changelog_contains_entry() {
+  local summary
+  summary="$(cat)"
+
+  CHANGELOG_SUMMARY="$summary" python3 - "$1" "$2" "$3" <<'PY'
+import os
+from pathlib import Path
+import sys
+
+path, version, release_date = sys.argv[1:4]
+summary = os.environ["CHANGELOG_SUMMARY"].strip()
+expected = f"## {version} — {release_date}\n\n{summary}\n"
+
+try:
+    contents = Path(path).read_text()
+except FileNotFoundError:
+    raise SystemExit(1)
+
+raise SystemExit(0 if expected in contents.replace("\r\n", "\n") else 1)
+PY
+}
+
+update_changelog() {
+  local summary
+  summary="$(cat)"
+
+  CHANGELOG_SUMMARY="$summary" python3 - "$1" "$2" "$3" <<'PY'
+import os
+from pathlib import Path
+import re
+import sys
+
+path, version, release_date = sys.argv[1:4]
+summary = os.environ["CHANGELOG_SUMMARY"].strip()
+entry = f"## {version} — {release_date}\n\n{summary}\n"
+
+file_path = Path(path)
+try:
+    existing = file_path.read_text().replace("\r\n", "\n")
+except FileNotFoundError:
+    existing = ""
+
+pattern = re.compile(rf"(?ms)^##\s+{re.escape(version)}\s+—.*?(?:\n---\n|\Z)")
+remaining = pattern.sub("", existing).lstrip("\n")
+
+if remaining:
+    new_contents = entry.rstrip() + "\n\n---\n" + remaining
+else:
+    new_contents = entry
+
+file_path.write_text(new_contents)
 PY
 }
 
@@ -130,67 +238,90 @@ fi
 
 latest_tag="$(GH_PAGER=cat gh release view --repo "$UPSTREAM_REPO" --json tagName --jq '.tagName')"
 latest_version="$(normalize_version "$latest_tag")"
+release_published_at="$(GH_PAGER=cat gh release view "$latest_tag" --repo "$UPSTREAM_REPO" --json publishedAt --jq '.publishedAt')"
+release_body="$(GH_PAGER=cat gh release view "$latest_tag" --repo "$UPSTREAM_REPO" --json body --jq '.body')"
+release_date="$(format_release_date "$release_published_at")"
+release_summary="$(extract_release_summary <<<"$release_body")"
 
 if [[ -z "$latest_version" ]]; then
   echo "error: could not determine the latest upstream version" >&2
   exit 1
 fi
 
-update_required=1
+asset_update_required=1
 if (( ! FORCE )) && [[ -n "$tracked_version" ]]; then
   if version_greater_than "$latest_version" "$tracked_version"; then
-    update_required=1
+    asset_update_required=1
   else
-    update_required=0
+    asset_update_required=0
   fi
 fi
 
-if (( update_required == 0 )); then
+changelog_update_required=1
+if changelog_contains_entry "$CHANGELOG_FILE" "$latest_version" "$release_date" <<<"$release_summary"; then
+  changelog_update_required=0
+fi
+
+if (( asset_update_required == 0 )) && (( changelog_update_required == 0 )); then
   echo "MeAll Agents is already current at $tracked_version"
   exit 0
 fi
 
 if (( CHECK_ONLY )); then
-  if [[ -n "$tracked_version" ]]; then
+  if (( asset_update_required )); then
+    if [[ -n "$tracked_version" ]]; then
+      echo "Update available: $tracked_version -> $latest_version"
+    else
+      echo "Update available: no tracked version -> $latest_version"
+    fi
+  fi
+  if (( changelog_update_required )); then
+    echo "Changelog update needed for $latest_version"
+  fi
+  if (( asset_update_required == 0 )) && (( changelog_update_required == 0 )); then
     echo "Update available: $tracked_version -> $latest_version"
-  else
-    echo "Update available: no tracked version -> $latest_version"
   fi
   exit 0
 fi
 
-tmp_dir="$(mktemp -d "${TMPDIR:-/tmp}/meall-agents-sync.XXXXXX")"
-trap 'rm -rf "$tmp_dir"' EXIT
+if (( asset_update_required )); then
+  tmp_dir="$(mktemp -d "${TMPDIR:-/tmp}/meall-agents-sync.XXXXXX")"
+  trap 'rm -rf "$tmp_dir"' EXIT
 
-asset_pairs=(
-  "MeAll.Agents.Setup.${latest_version}.exe:MeAllAgents-Setup-x64.exe"
-  "MeAll.Agents-${latest_version}.dmg:MeAllAgents-x64.dmg"
-  "MeAll.Agents-${latest_version}-arm64.dmg:MeAllAgents-arm64.dmg"
-  "MeAll.Agents-${latest_version}.AppImage:MeAllAgents-x86.AppImage"
-)
+  asset_pairs=(
+    "MeAll.Agents.Setup.${latest_version}.exe:MeAllAgents-Setup-x64.exe"
+    "MeAll.Agents-${latest_version}.dmg:MeAllAgents-x64.dmg"
+    "MeAll.Agents-${latest_version}-arm64.dmg:MeAllAgents-arm64.dmg"
+    "MeAll.Agents-${latest_version}.AppImage:MeAllAgents-x86.AppImage"
+  )
 
-download_args=(release download "$latest_tag" --repo "$UPSTREAM_REPO" --dir "$tmp_dir")
-for asset_pair in "${asset_pairs[@]}"; do
-  upstream_name="${asset_pair%%:*}"
-  download_args+=(--pattern "$upstream_name")
-done
+  download_args=(release download "$latest_tag" --repo "$UPSTREAM_REPO" --dir "$tmp_dir")
+  for asset_pair in "${asset_pairs[@]}"; do
+    upstream_name="${asset_pair%%:*}"
+    download_args+=(--pattern "$upstream_name")
+  done
 
-GH_PAGER=cat gh "${download_args[@]}"
+  GH_PAGER=cat gh "${download_args[@]}"
 
-for asset_pair in "${asset_pairs[@]}"; do
-  upstream_name="${asset_pair%%:*}"
-  dest_name="${asset_pair#*:}"
-  local_path="$tmp_dir/$upstream_name"
-  dest_path="$ASSET_DIR/$dest_name"
-  if [[ ! -f "$local_path" ]]; then
-    echo "error: expected downloaded asset not found: $upstream_name" >&2
-    exit 1
-  fi
-  rm -f "$dest_path"
-  mv "$local_path" "$dest_path"
-done
+  for asset_pair in "${asset_pairs[@]}"; do
+    upstream_name="${asset_pair%%:*}"
+    dest_name="${asset_pair#*:}"
+    local_path="$tmp_dir/$upstream_name"
+    dest_path="$ASSET_DIR/$dest_name"
+    if [[ ! -f "$local_path" ]]; then
+      echo "error: expected downloaded asset not found: $upstream_name" >&2
+      exit 1
+    fi
+    rm -f "$dest_path"
+    mv "$local_path" "$dest_path"
+  done
 
-printf '%s\n' "$latest_version" > "$VERSION_FILE"
+  printf '%s\n' "$latest_version" > "$VERSION_FILE"
+fi
+
+if (( changelog_update_required )); then
+  update_changelog "$CHANGELOG_FILE" "$latest_version" "$release_date" <<<"$release_summary"
+fi
 
 echo "Synced MeAll Agents assets to $latest_version"
 
