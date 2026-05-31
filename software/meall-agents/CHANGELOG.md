@@ -1,3 +1,8 @@
+## 0.17.0 — May 31, 2026
+
+MeAll Agents 0.17.0 ships the biggest infrastructure upgrade yet: **ACP Auto-Configuration**. ACP coding agents (Copilot, Gemini CLI, Claude Code, Codex) are now auto-detected, health-checked, and configured through dedicated skill cards — no more digging into `openclaw.json` to wire them up. This release also brings Kanban task orchestration improvements and tighter Docker container management. 4,000+ new lines across 19 files, zero breaking changes.
+
+---
 ## 0.16.1 — May 27, 2026
 
 MeAll Agents 0.16.1 is a focused stability patch for the 0.16 line. This release tightens Cockpit reliability when provider runs fail, prevents a known broken DeepSeek v4 route from being selected by default in ModelRelay, and preserves more operational guidance for future maintenance.
