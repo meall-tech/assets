@@ -1,3 +1,8 @@
+## 0.18.0 — June 14, 2026
+
+MeAll Agents 0.18.0 introduces support for accessing the MeAll Agents UI and terminals over the local network (LAN), accompanied by global configuration settings and access controls. It also includes an upgrade to the sandbox OpenClaw runtime.
+
+---
 ## 0.17.0 — May 31, 2026
 
 MeAll Agents 0.17.0 ships the biggest infrastructure upgrade yet: **ACP Auto-Configuration**. ACP coding agents (Copilot, Gemini CLI, Claude Code, Codex) are now auto-detected, health-checked, and configured through dedicated skill cards — no more digging into `openclaw.json` to wire them up. This release also brings Kanban task orchestration improvements and tighter Docker container management. 4,000+ new lines across 19 files, zero breaking changes.
