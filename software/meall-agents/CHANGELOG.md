@@ -1,3 +1,8 @@
+## 0.19.0 — June 18, 2026
+
+MeAll Agents 0.19.0 adds **Hugging Face as a first-class AI provider**, giving users instant access to popular open-weight frontier models — including DeepSeek, Qwen, Llama, GLM, and GPT-OSS — through a single fine-grained token. This is the first new provider since NVIDIA and opens the door to a much broader model catalog without additional API keys or subscriptions.
+
+---
 ## 0.18.0 — June 14, 2026
 
 MeAll Agents 0.18.0 introduces support for accessing the MeAll Agents UI and terminals over the local network (LAN), accompanied by global configuration settings and access controls. It also includes an upgrade to the sandbox OpenClaw runtime.
