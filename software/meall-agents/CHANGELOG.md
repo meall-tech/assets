@@ -1,3 +1,10 @@
+## 0.21.0 — June 20, 2026
+
+**A foundation upgrade — security, resilience, and smarter tooling.**
+
+This release focuses on the engine room. We upgraded the OpenClaw runtime across four stable releases, hardened the security model, gave you parallel search superpowers, and made the system more resilient under pressure.
+
+---
 ## 0.20.0 — June 20, 2026
 
 MeAll Agents 0.20.0 adds **ModelRelay resilience**, a redesigned model picker with SWE-bench scores and pricing, and license network resilience — making the app more reliable in offline scenarios and improving model selection visibility.
