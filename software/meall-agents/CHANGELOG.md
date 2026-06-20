@@ -1,3 +1,8 @@
+## 0.20.0 — June 20, 2026
+
+MeAll Agents 0.20.0 adds **ModelRelay resilience**, a redesigned model picker with SWE-bench scores and pricing, and license network resilience — making the app more reliable in offline scenarios and improving model selection visibility.
+
+---
 ## 0.19.0 — June 18, 2026
 
 MeAll Agents 0.19.0 adds **Hugging Face as a first-class AI provider**, giving users instant access to popular open-weight frontier models — including DeepSeek, Qwen, Llama, GLM, and GPT-OSS — through a single fine-grained token. This is the first new provider since NVIDIA and opens the door to a much broader model catalog without additional API keys or subscriptions.
