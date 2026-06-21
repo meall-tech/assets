@@ -1,3 +1,10 @@
+## 0.22.0 — June 21, 2026
+
+**A quick, punchy security & reliability bump.**
+
+Hot on the heels of 0.21.0, this dot release upgrades the OpenClaw runtime from 2026.6.8 → 2026.6.9 — a focused release that brings richer messaging, stronger agent recovery, and better developer tooling.
+
+---
 ## 0.21.0 — June 20, 2026
 
 **A foundation upgrade — security, resilience, and smarter tooling.**
