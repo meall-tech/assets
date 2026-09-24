@@ -3,6 +3,36 @@
 MeAll Agents 0.26.1 is a hotfix release: **the distributable CLI binaries build again**.
 
 ---
+## 0.26.0 — September 24, 2026
+
+MeAll Agents 0.26.0 introduces **Node Mode**: turn any computer running the Electron app into a companion node for a sandbox gateway — run shell commands, access files, and use a managed browser on that machine, all subject to exec approvals. It also introduces **Remote Node Mode**: connect a local node to a sandbox on a detached server over LAN, Tailscale, or HTTPS, plus hardened sandbox proxying for custom-port reverse proxies.
+
+---
+## 0.25.2 — September 1, 2026
+
+MeAll Agents 0.25.2 is a hotfix release: **sandbox cards now recognize OpenAI subscription (OAuth) setups as configured**, **the configure screen returns to the main window cleanly instead of stranding a broken webview**, and the **password gate fully masks the app behind it**.
+
+---
+## 0.25.1 — August 31, 2026
+
+MeAll Agents 0.25.1 is a fix release: **the Cockpit now loads reliably in thin-client tabs on detached-server deployments**, plus **Electron host-switching resilience** and a **Terraform staging restart fix**.
+
+---
+## 0.25.0 — August 31, 2026
+
+MeAll Agents 0.25.0 delivers **runtime local/remote host switching**, **sandbox renaming**, and a **one-command local install flow**, plus fixes for keyboard shortcuts, LAN WebSocket origins, and Cockpit agent auth seeding.
+
+---
+## 0.24.0 — August 24, 2026
+
+MeAll Agents 0.24.0 delivers **system-following light/dark theming**, **theme-aware native translucency on macOS and Windows**, a **polished sandbox-creation result experience**, and a round of **desktop packaging, logging, and UI fixes** — including the fix for unclickable dashboard/Cockpit headers while a Hub tab is open.
+
+---
+## 0.23.0 — August 9, 2026
+
+MeAll Agents 0.23.0 introduces **detached server mode**, **pre-built base sandbox images**, **Terraform provisioning for managed instances**, a comprehensive **UI/UX overhaul across the dashboard, Cockpit, and configuration page**, and a redesigned **sandbox creation progress bar** — cutting first-sandbox creation from 10+ minutes to under a minute.
+
+---
 ## 0.22.0 — June 21, 2026
 
 **A quick, punchy security & reliability bump.**
