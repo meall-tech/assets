@@ -1,202 +1,191 @@
 ## 0.26.1 — September 24, 2026
 
-MeAll Agents 0.26.1 is a hotfix release: **the distributable CLI binaries build again**.
+MeAll Agents 0.26.1 is a hotfix release: **the downloads on the website work again**.
 
 ---
 ## 0.26.0 — September 24, 2026
 
-MeAll Agents 0.26.0 introduces **Node Mode**: turn any computer running the Electron app into a companion node for a sandbox gateway — run shell commands, access files, and use a managed browser on that machine, all subject to exec approvals. It also introduces **Remote Node Mode**: connect a local node to a sandbox on a detached server over LAN, Tailscale, or HTTPS, plus hardened sandbox proxying for custom-port reverse proxies.
+MeAll Agents 0.26.0 introduces **Node Mode**: turn any computer running the MeAll App into a helper for one of your sandboxes — the sandbox can run commands, work with files, and browse the web on that computer, always within the permissions you set. It also introduces **Remote Node Mode**: connect a computer to a sandbox running on a remote server over your home network, Tailscale, or a secure connection — plus more reliable Cockpit, Hub, and app connections on custom network setups.
 
 ---
 ## 0.25.2 — September 1, 2026
 
-MeAll Agents 0.25.2 is a hotfix release: **sandbox cards now recognize OpenAI subscription (OAuth) setups as configured**, **the configure screen returns to the main window cleanly instead of stranding a broken webview**, and the **password gate fully masks the app behind it**.
+MeAll Agents 0.25.2 is a hotfix release: **sandbox cards correctly show your ChatGPT subscription as connected**, **saving settings returns you to the main window instead of a broken view**, and the **password screen fully covers the app**.
 
 ---
 ## 0.25.1 — August 31, 2026
 
-MeAll Agents 0.25.1 is a fix release: **the Cockpit now loads reliably in thin-client tabs on detached-server deployments**, plus **Electron host-switching resilience** and a **Terraform staging restart fix**.
+MeAll Agents 0.25.1 is a fix release: **the Cockpit now loads reliably when the MeAll App is connected to a remote server**, plus **smoother switching between computers** and a **staging server restart fix**.
 
 ---
 ## 0.25.0 — August 31, 2026
 
-MeAll Agents 0.25.0 delivers **runtime local/remote host switching**, **sandbox renaming**, and a **one-command local install flow**, plus fixes for keyboard shortcuts, LAN WebSocket origins, and Cockpit agent auth seeding.
+MeAll Agents 0.25.0 delivers **switching between your computer and remote servers without restarting**, **sandbox renaming**, and a **one-command install**, plus fixes for keyboard shortcuts, live connections over the local network, and Cockpit sign-ins.
 
 ---
 ## 0.24.0 — August 24, 2026
 
-MeAll Agents 0.24.0 delivers **system-following light/dark theming**, **theme-aware native translucency on macOS and Windows**, a **polished sandbox-creation result experience**, and a round of **desktop packaging, logging, and UI fixes** — including the fix for unclickable dashboard/Cockpit headers while a Hub tab is open.
+MeAll Agents 0.24.0 delivers **light and dark themes that follow your system**, **a matching translucent look on macOS and Windows**, a **nicer finish after creating a sandbox**, and a round of **packaging and UI fixes** — including clickable dashboard and Cockpit headers while a Hub tab is open.
 
 ---
 ## 0.23.0 — August 9, 2026
 
-MeAll Agents 0.23.0 introduces **detached server mode**, **pre-built base sandbox images**, **Terraform provisioning for managed instances**, a comprehensive **UI/UX overhaul across the dashboard, Cockpit, and configuration page**, and a redesigned **sandbox creation progress bar** — cutting first-sandbox creation from 10+ minutes to under a minute.
+MeAll Agents 0.23.0 introduces **remote server mode** — run the heavy work on a server while the MeAll App on your computer acts as a lightweight remote control — plus **ready-made sandbox images**, **one-command server setup**, a comprehensive **fresh look across the dashboard, Cockpit, and settings pages**, and a redesigned **sandbox creation progress bar** — cutting first-sandbox creation from 10+ minutes to under a minute.
 
 ---
 ## 0.22.0 — June 21, 2026
 
-**A quick, punchy security & reliability bump.**
+**A quick security & reliability bump.**
 
-Hot on the heels of 0.21.0, this dot release upgrades the OpenClaw runtime from 2026.6.8 → 2026.6.9 — a focused release that brings richer messaging, stronger agent recovery, and better developer tooling.
+This dot release updates the built-in agent engine — bringing richer messaging, stronger agent recovery, and better tools for people who build on it.
 
 ---
 ## 0.21.0 — June 20, 2026
 
 **A foundation upgrade — security, resilience, and smarter tooling.**
 
-This release focuses on the engine room. We upgraded the OpenClaw runtime across four stable releases, hardened the security model, gave you parallel search superpowers, and made the system more resilient under pressure.
+This release focuses on the engine room. We updated the agent engine across four stable releases, hardened security, gave you parallel search superpowers, and made the system more resilient under pressure.
 
 ---
 ## 0.20.0 — June 20, 2026
 
-MeAll Agents 0.20.0 adds **ModelRelay resilience**, a redesigned model picker with SWE-bench scores and pricing, and license network resilience — making the app more reliable in offline scenarios and improving model selection visibility.
+MeAll Agents 0.20.0 adds **more reliable free-model routing**, a redesigned model picker with quality scores and pricing, and better license handling without internet — making the app more reliable offline and model selection clearer.
 
 ---
 ## 0.19.0 — June 18, 2026
 
-MeAll Agents 0.19.0 adds **Hugging Face as a first-class AI provider**, giving users instant access to popular open-weight frontier models — including DeepSeek, Qwen, Llama, GLM, and GPT-OSS — through a single fine-grained token. This is the first new provider since NVIDIA and opens the door to a much broader model catalog without additional API keys or subscriptions.
+MeAll Agents 0.19.0 adds **Hugging Face as a first-class AI provider**, giving you instant access to popular open-weight frontier models — including DeepSeek, Qwen, Llama, GLM, and GPT-OSS — through a single token. This is the first new provider since NVIDIA and opens the door to a much broader model catalog without additional API keys or subscriptions.
 
 ---
 ## 0.18.0 — June 14, 2026
 
-MeAll Agents 0.18.0 introduces support for accessing the MeAll Agents UI and terminals over the local network (LAN), accompanied by global configuration settings and access controls. It also includes an upgrade to the sandbox OpenClaw runtime.
+MeAll Agents 0.18.0 introduces support for opening the MeAll Agents screen and terminals from other devices on your local network, with settings and access controls. It also includes an updated agent engine for sandboxes.
 
 ---
 ## 0.17.0 — May 31, 2026
 
-MeAll Agents 0.17.0 ships the biggest infrastructure upgrade yet: **ACP Auto-Configuration**. ACP coding agents (Copilot, Gemini CLI, Claude Code, Codex) are now auto-detected, health-checked, and configured through dedicated skill cards — no more digging into `openclaw.json` to wire them up. This release also brings Kanban task orchestration improvements and tighter Docker container management. 4,000+ new lines across 19 files, zero breaking changes.
+MeAll Agents 0.17.0 ships the biggest upgrade yet for coding help: **automatic setup for AI coding assistants**. Your coding assistants (Copilot, Gemini CLI, Claude Code, Codex) are now found, health-checked, and configured through dedicated skill cards — no more editing settings files by hand. This release also brings Kanban task improvements and more reliable sandbox handling.
 
 ---
 ## 0.16.1 — May 27, 2026
 
-MeAll Agents 0.16.1 is a focused stability patch for the 0.16 line. This release tightens Cockpit reliability when provider runs fail, prevents a known broken DeepSeek v4 route from being selected by default in ModelRelay, and preserves more operational guidance for future maintenance.
+MeAll Agents 0.16.1 is a focused stability patch. This release tightens Cockpit reliability when AI runs fail, stops a known broken DeepSeek route from being picked by default, and keeps more helpful guidance around for the future.
 
 ---
 ## 0.16.0 — May 26, 2026
 
-MeAll Agents 0.16.0 ships sandbox updates, dark mode by default, and a tighter Cockpit experience. The biggest change: when a new OpenClaw version lands, your sandbox tells you — and updating is one click. No more manual container rebuilds from the terminal.
+MeAll Agents 0.16.0 ships sandbox updates, dark mode by default, and a tighter Cockpit experience. The biggest change: when a new agent engine version lands, your sandbox tells you — and updating is one click. No more rebuilding anything by hand in a terminal.
 
 ---
 
 ## 0.15.4 — May 12, 2026
 
-A focused bug fix release — Cockpit launch is working reliably again and log overhead in packaged builds has been cleaned up.
+A focused bug fix release — Cockpit launch is working reliably again and packaged builds run quieter behind the scenes.
 
 ### Cockpit Launch Restored
 
-The `getNerveUrl` function had a broken env var parsing block that was preventing Cockpit from launching after rebuild. Fixed by removing the leftover garbage block and ensuring the `NERVE_INSTALL_DIR/.env` file is written with proper JSON config handling.
+Cockpit refused to open after a sandbox rebuild because of a broken settings block. Removed, so launching works again.
 
-### Packaged Log Overhead Trimmed
+### Quieter Packaged Builds
 
-In production builds, backend and web process stdout/stderr were being mirrored to the main process console regardless of whether there was anything to log. Output is now only mirrored when `MEALL_MIRROR_CHILD_STDOUT=true` is set — dev mode or explicit opt-in.
+In installed builds, background services no longer spam the console. Detailed output is still available in development mode.
 
-### JSON Config Writes Fixed
+### Settings Saves Fixed
 
-Two `fs.writeFileSync` calls in the container-side Node scripts were using `\\n` instead of `\n` for the trailing newline. Corrected.
+Two settings files were being saved with broken line endings. Corrected.
 
 ---
 ## 0.15.3 — May 12, 2026
 
 Cockpit reliability improvements and polished macOS packaging.
 
-### Cockpit Cron Access Restored After Rebuild
+### Scheduled Runs Work Again After Rebuild
 
-After a sandbox rebuild, the `cron` tool was missing from `gateway.tools.allow`, silently breaking scheduled agent runs. Fixed by asserting the required tools (`cron`, `gateway`, `sessions_spawn`) during `finalizeConfiguration`, and by repairing missing tools in the container before Cockpit launches — with a sandbox restart if needed so the change takes effect immediately.
+After a sandbox rebuild, scheduled runs silently stopped working because a permission was missing. The app now makes sure the required permissions are in place — repairing them automatically before Cockpit launches, restarting the sandbox if needed so the change takes effect immediately.
 
-### Docker Gateway Restart Now Works Reliably
+### Sandbox Restarts Fixed
 
-`startOpenClawGateway` was calling `docker restart` with the display name, which failed silently for sandboxes with special characters. Now uses `docker.restartVM()` with proper slugging and label-based lookup.
+Restarting a sandbox from the app failed silently for sandboxes with special characters in their names. Now it works regardless of the name.
 
-### Build Error Output Improved
+### Clearer Build Errors
 
-Vendored Nerve builds now produce clear, actionable error messages instead of raw stdout/stderr with no context.
+When the Cockpit fails to build inside a sandbox, you now get a clear, actionable error message instead of raw technical output.
 
-### Rebuild Flow Uses finalizeConfiguration
+### Rebuild Does Things in the Right Order
 
-The rebuild endpoint now calls `finalizeConfiguration` directly, handling permissions, gateway tools, ModelRelay, and doctor fixes in the right order.
+Rebuilding a sandbox now handles permissions, tools, free-model routing, and automatic fixes in the right order.
 
 ### macOS Packaging
 
-- DMG with branded background image, repositioned app icon, and Applications link
-- **Quick Install script** — a `.command` file inside the DMG runs a guided installation to Applications with progress indicator
-- Proper `icon.icns` bundle and automated icon build pipeline
-- Large Nerve dev dependencies excluded from the packaged app
+- Nicer disk image with background artwork, positioned app icon, and Applications shortcut
+- **Quick Install script** — a file inside the disk image runs a guided installation to Applications with a progress indicator
+- Proper app icon bundle and automated icon pipeline
+- Unnecessary developer files excluded from the installed app
 
 ---
 
 ## 0.15.2 — May 11, 2026
 
-Two solid improvements — an important quality-of-life feature and a Docker recovery fix.
+Two solid improvements — automatic update checks and a sandbox recovery fix.
 
 ### Update Check & Auto-Download
 
-MeAll Agents now checks for new versions automatically. The app periodically fetches the latest version from the assets server and notifies you when an update is available.
+MeAll Agents now checks for new versions automatically. The app periodically fetches the latest version from our server and notifies you when an update is available.
 
-- **Automatic background checks** — the app checks for new versions a couple of times per day and on first launch after installing
-- **One-click update** — when an update is available, a clear prompt in the About modal lets you download the right installer for your platform (macOS ARM64, macOS x64, Windows, Linux)
-- **Manual check** — click "Check for updates" in the About modal anytime to trigger a check on demand, with a timestamp of the last check shown below the button
+- **Automatic background checks** — a couple of times per day and on first launch after installing
+- **One-click update** — when an update is available, a clear prompt in the About window lets you download the right installer for your computer (Mac with Apple chip, Mac with Intel chip, Windows, Linux)
+- **Manual check** — click "Check for updates" in the About window anytime, with the last check time shown below the button
 
-### Docker Sandbox Recovery Fix
+### Sandbox Recovery Fix
 
-Sandboxes with special characters in their display name (slashes, backslashes, etc.) could not be properly recovered. This is now fixed.
-
-- **Safe name slugging** — display names with special characters are converted to safe Docker container names using a stable hash so the app can always find the right container
-- **Label-based lookup** — containers are now tracked by a `meall-agent` label, making recovery reliable regardless of what characters the display name contains
-- **Existing sandboxes migrated** — recovery logic covers sandboxes created before this fix too
+Sandboxes with special characters in their names (slashes and the like) can now always be found and recovered by the app — including sandboxes created before this fix.
 
 ### Bug Fixes
 
-- **Update check auto-trigger** — when opening the About modal with no prior check on record, an update check fires immediately so you are never looking at stale data
-- **Docker sandbox recovery** — sandboxes with unsafe characters in their display name are now properly recoverable
+- **Update check on open** — opening the About window with no prior check now checks immediately, so you never see stale data
+- **Sandbox recovery** — sandboxes with unusual characters in their names are now properly recoverable
 
 ---
-
-
-All notable changes to MeAll Agents are here. Releases are listed from newest to oldest.
-
----
-
 ## 0.15.1 — May 11, 2026
 
-A focused quality release — stability fixes, better Docker infrastructure, and a long-standing UX fix.
+A focused quality release — stability fixes, better sandbox handling, and a long-standing interface fix.
 
 ### What's Fixed
 
-**Public Links Now Open in Your Browser** — When clicking a web link in Cockpit, MeAll Agents was opening it in a new Electron window instead of your system browser. That behavior is now fixed. Public URLs go to your browser; local/private URLs stay in the app where they belong.
+**Links Now Open in Your Browser** — Clicking a web link in Cockpit used to open it in a new MeAll App window instead of your system browser. Fixed: public links go to your browser; your own local addresses stay in the app where they belong.
 
-**Smarter Docker & Server Configuration** — Sandbox and server environments have been improved with better configuration handling, cleaner container lifecycle management, and more reliable startup sequencing.
+**More Reliable Saving & Startup** — Sandbox and server settings save more dependably, with cleaner startup sequencing behind the scenes.
 
-**Better UI Behavior Indicators** — The app now gives clearer visual feedback when processes are starting, running, or in an error state — so you can see what's happening at a glance.
+**Clearer Status Feedback** — The app now shows more clearly what's starting, running, or failing — so you can see what's happening at a glance.
 
 ### Bug Fixes
 
-- Public URLs open in system browser from Cockpit (#118)
-- Memory search default provider fallback
-- Gateway device scope repair for Docker environments
-- Consistent markdown code formatting across the codebase
+- Public links open in system browser from Cockpit (#118)
+- Memory search falls back to a working provider
+- Device permissions repaired automatically in sandbox environments
+- Consistent code formatting in chat messages
 
 ---
-
 ## 0.15.0 — May 7, 2026
 
-MeAll Agents 0.15.0 makes AI free. This release ships ModelRelay inside every sandbox — a smart local router that live-benchmarks free coding models across top providers and automatically routes your requests to the best available one.
+MeAll Agents 0.15.0 makes AI free. This release puts ModelRelay inside every sandbox — it tries out free coding models across top providers live and automatically sends your requests to the best available one.
 
 ### ModelRelay — Free AI, Automatically
 
-ModelRelay runs inside every sandbox as a local OpenAI-compatible router that benchmarks free models across trusted providers (NVIDIA, Groq, OpenRouter, Google) and routes each request to the best available one.
+ModelRelay runs inside every sandbox and sends each request to the best available free model.
 
-- **auto-fastest** — The default model continuously evaluates speed and capability to pick the right model for each request
-- **100% savings on AI** — Routes through free-tier models first, paid keys as fallback
-- **Built-in dashboard** — Monitor routing decisions, provider health, and available models from the UI
-- **Zero-config** — Ships inside the sandbox and starts automatically
+- **auto-fastest** — The default continuously weighs speed and capability to pick the right model for each request
+- **100% savings on AI** — Free models first, paid keys as fallback
+- **Built-in dashboard** — Watch routing decisions, provider health, and available models from the interface
+- **Zero-config** — Already inside the sandbox and starts automatically
 
 ### Ollama — Local Models, One Click Away
 
-Full Ollama integration with pull, configure, and model management directly from the Settings UI. Provider badges make model origins clear at a glance.
+Full Ollama integration with download, setup, and model management directly from Settings. Badges make model origins clear at a glance.
 
 ### NVIDIA as a First-Class Provider
 
-Native NVIDIA API key integration. Add your key in Settings and models appear immediately with proper badges.
+Native NVIDIA key integration. Add your key in Settings and models appear immediately with proper badges.
 
 ### Kami — Professional Document Generation
 
@@ -204,515 +193,450 @@ Typeset one-pagers, resumes, slide decks, letters, and portfolios on warm parchm
 
 ### Bug Fixes
 
-- **AGENTS.md truncation** — Fixed `bootstrapMaxChars` to 20000 to prevent skill descriptions from being silently stripped on sandbox creation
-- **Provider config API types** — Corrected baseUrl and models format for clean provider registration
-- **Provider badge positioning** — Fixed alignment in the settings/models list
+- **Agent instructions kept intact** — Skill guides no longer get cut off when a sandbox is created
+- **Provider setup** — Cleaner key and address handling when adding providers
+- **Model list alignment** — Fixed alignment in the settings model list
 
 ---
-
 ## 0.14.0 — May 5, 2026
 
-Your agent now has a cockpit. MeAll Agents 0.14.0 ships a full operational control surface for your sandbox — agent fleet control, workspace browser, kanban board, cron scheduling, session tree, and more. Plus a visual overhaul with flat icons, glass-morphism header, and a cohesive dark/light theme system.
+Your agent now has a cockpit. MeAll Agents 0.14.0 ships a full operational control surface for your sandbox — agent fleet control, workspace browser, kanban board, scheduled runs, session history, and more. Plus a fresh look with simple icons and a cohesive light/dark theme system.
 
 ### Cockpit — Your Agent's Operating Surface
 
-Click **Cockpit** from the machine card and it opens in a new window — ready to go with no setup.
+Click **Cockpit** on the sandbox card and it opens ready to go with no setup.
 
-- **Agent fleet control** — Run multiple agents from one place, each with its own workspace, subagents, memory, and skills
-- **Workspace browser & editor** — Browse files, edit documents, view rendered markdown, inspect PDFs — live while the agent runs
-- **Kanban task board** — Delegate work onto a structured board; agents create proposals, you control the flow
-- **Cron scheduling** — See, create, and manage scheduled agent runs with clear labeling
-- **Session tree** — Inspect subagent activity without losing your main thread
-- **Memory & config editing** — Inspect and edit agent memory, config, and skills from the UI
-- **Rich output** — Charts, diffs, syntax-highlighted code, image previews, structured tool rendering
+- **Agent fleet control** — Run multiple agents from one place, each with its own workspace, memory, and skills
+- **Workspace browser & editor** — Browse files, edit documents, view rendered documents, inspect PDFs — live while the agent runs
+- **Kanban task board** — Delegate work onto a structured board; agents propose, you decide
+- **Scheduled runs** — See, create, and manage scheduled agent runs with clear labels
+- **Session history** — Inspect what helpers have been doing without losing your main thread
+- **Memory & settings editing** — Inspect and edit agent memory, settings, and skills from the interface
+- **Rich output** — Charts, file comparisons, highlighted code, image previews, structured tool views
 - **Token usage & cost tracking** — See what your agent is spending in real time
 
-### Visual Overhaul
+### Fresh New Look
 
-- Shared design system with custom properties for fonts, surfaces, borders, and accents
-- Flat icon system replacing emoji-based labels across all pages
-- Sticky glass header with rounded corners and subtle accent line
-- Refined modal, button, and spinner styles throughout
-- Dark theme with proper elevated surfaces instead of just color inversion
+- Shared design with custom fonts, surfaces, borders, and accents
+- Simple icon system replacing emoji labels across all pages
+- Sticky header with rounded corners and subtle accent line
+- Refined windows, buttons, and loading indicators throughout
+- Dark theme with proper depth instead of just inverted colors
 
-### Docker Integration
+### Sandboxes
 
-- Cockpit source is vendored and built inside the Docker container during setup
-- Bundled cockpit skills (starting with `kanban`) auto-sync into the agent workspace
-- `node_modules/.bin` now on PATH inside containers
+- Cockpit updates ship with the sandbox and install during setup
+- Bundled starter skills (starting with task boards) sync into the agent workspace automatically
 
 ### Bug Fixes
 
-- Agent Chat input freeze regression fixed
-- Cron dialog clarity improvements
+- Agent Chat input freeze fixed
+- Clearer scheduling window
 
 ---
-
 ## 0.13.0 — April 22, 2026
 
-Your agent now has its own web chat — branded, personalized, and accessible from anywhere. Plus smart device pairing that Just Works™.
+Your agent now has its own web chat — branded, personalized, and accessible from anywhere. Plus smart device approval that just works.
 
 ### OpenWebUI Skill
 
-A full self-hosted web interface for your agent, powered by OpenWebUI and connected to OpenClaw. Reads your agent's `IDENTITY.md` to create a personalized model card — name, emoji, description.
+A full web chat for your agent that you can brand and personalize. It reads your agent's identity card to create a tailored model card — name, emoji, description.
 
-- **One-command setup** — branding, config, and model entries all done automatically
-- **MeAll Agents branding** — dark theme, custom login page, logo, and favicon
-- **Service management** — start, stop, restart, and logs via `service.sh`
-- **Remote access** — automatically spins up a Cloudflare tunnel when started
+- **One-command setup** — branding and access details all handled automatically
+- **MeAll Agents styling** — dark theme, custom sign-in page, logo, and icon
+- **Start, stop, restart, and logs** — manage it like any other service
+- **Remote access** — automatically reachable from outside your network when started
 
-### Agent Chat — Smart Device Pairing
+### Agent Chat — Smart Device Approval
 
-OpenClaw 2026.4.21 hardened the TUI's device pairing requirements, causing "Pairing required" on every open. The app now handles this automatically:
+Connecting a new device used to ask for approval every single time. The app now remembers approved devices:
 
-- **Automatic pairing** — approves pending requests and reloads the terminal
-- **Persistent device ID** — saved to VM config, skipped on subsequent opens
-- **Robust detection** — catches `GatewayClientRequestError` and has a 5-second fallback timer for edge cases
+- **Automatic approval** — pending requests are approved and the terminal reloads
+- **Remembered devices** — approved once, skipped from then on
+- **Reliable detection** — connection problems are caught with a fallback timer for tricky cases
 
-### Todo Skill — API Warning
+### Todo Skill — Lists That Don't Lose Items
 
-Agents were sometimes editing `todos.json` directly instead of using the API, causing changes to silently disappear. SKILL.md now includes an explicit warning about always using the API.
+Agents used to sometimes edit the task file directly instead of going through the app, and changes would silently disappear. That path is now closed — lists stay consistent.
 
-### OpenClaw 2026.4.21
+### Bug Fixes
 
-Bundled OpenClaw bumped to 2026.4.21. Existing users can update via **Settings → Advanced Setup → Update Sandbox Version**.
+- Fixed sandbox update notifications so new sandboxes get the pinned version instead of the latest
+- Agent setup instructions applied after startup instead of too early
+- Chat channel setup fixed for Slack and Discord
 
 ---
-
 ## 0.12.1 — April 19, 2026
 
-A new GitHub skill, an Ollama toggle for cleaner model selection, and battle-tested Proof Editor documentation.
+A new GitHub skill, a cleaner model list for people who don't run local models, and an improved editing guide.
 
 ### GitHub Skill
 
-Agents can manage GitHub repositories, issues, PRs, and CI — all from the sandbox using the `gh` CLI.
+Your agent can manage GitHub repositories, issues, pull requests, and releases — all from the sandbox.
 
-- **Device flow and PAT authentication** — log in from the settings page without TTY
-- **Full `gh` CLI access** — repos, issues, PRs, actions, releases, gists
-- **Settings UI** — install, authenticate, and manage with status cards
+- **Easy sign-in** — log in from the settings page, no terminal needed
+- **Full repository access** — repos, issues, pull requests, releases
+- **Settings screen** — install, sign in, and manage with status cards
 
 ### Ollama Toggle
 
-Not everyone uses local models. A global toggle in the Settings modal lets you hide the Ollama provider card entirely when it's not needed.
+Don't run local models? A switch in Settings hides the Ollama section entirely when you don't need it.
 
 ### Proof Editor — Collaborative Editing Guide
 
-Updated SKILL.md with guidance on how to edit a doc that humans are actively changing:
+Updated guidance for editing a document someone is actively changing:
 
-- The Reliable Edit Loop — read, snapshot, edit one block, re-read
-- Anti-patterns for collaborative docs
-- When NOT to use `rewrite.apply`
-
-### OpenClaw 2026.4.15
-
-Bundled OpenClaw bumped to 2026.4.15.
+- Read, snapshot, edit one block, re-read
+- What to avoid when collaborating on docs
+- When to leave the document alone instead of rewriting it
 
 ### Bug Fixes
 
-- **OpenRouter provider** — Fixed wrong API base URL (`https://openrouter.ai/v1` → `https://openrouter.ai/api/v1`)
+- **OpenRouter connection** — Fixed a wrong server address that broke the integration
 
 ---
-
 ## 0.12.0 — April 15, 2026
 
-A built-in Todo app, smarter shared folder awareness for agents, and a reworked auth gate that speaks the full HTTP vocabulary.
+A built-in Todo app, smarter shared folders for agents, and more reliable sign-in through shared links.
 
 ### Todo App
 
-A shared task manager running inside the sandbox — agent and user see the same list in real time.
+A shared task manager running inside the sandbox — you and your agent see the same list in real time.
 
-- **Web UI at port 7001** with drag-and-drop, dark/light theme, and auto-refresh
-- **JSON API** (`/api/todos`) — full CRUD plus reorder and clear-completed
-- **Service controls** from the configure page — start, stop, and restart without a terminal
-- **"Open Todo App" button** that opens the UI in a new tab
+- **Built-in web screen** with drag-and-drop, light/dark themes, and auto-refresh
+- **Full task API** — create, reorder, and clear completed tasks programmatically
+- **Start, stop, and restart** from the settings page — no terminal needed
+- **"Open Todo App" button** opens it in a new tab
 
 ### Shared Folders — Agent Awareness
 
-Agents now understand shared folders explicitly: available at `/mnt/<folder>`, bidirectional, real-time sync. No more guessing where to look.
+Agents now understand shared folders explicitly: available in the sandbox, two-way, live sync. No more guessing where to look.
 
-### Auth Gate — Full HTTP Method Support
+### Sign-In Through Shared Links
 
-The Tunnel skill's auth gate previously only handled GET and POST. All other methods were silently dropped. Refactored to properly proxy PUT, PATCH, DELETE — unblocking the Todo app API through the tunnel.
-
-### CI — Split Release & QA Build Workflows
-
-Release and QA builds are now separate workflows — faster CI, no platform filter confusion, and manual platform selection for quick testing.
+Opening a shared password-protected link used to silently drop some request types. Sign-in and the Todo app now work reliably through shared links.
 
 ### Bug Fixes
 
-- Todo API auto-generates UUIDs for missing IDs
-- `DELETE /api/todos?id=` with empty ID returns 400 instead of silently succeeding
+- Todo items get IDs automatically when missing
+- Empty delete requests are rejected instead of silently succeeding
 
 ---
-
 ## 0.11.0 — April 14, 2026
 
-UI polish, skill service management, sticky headers, and OpenClaw 2026.4.14.
+Interface polish, service controls, sticky headers, and an updated agent engine.
 
 ### Skill Service Management
 
-Start, stop, and restart Tunnel and Workspace Browser directly from the configure page. Structured logging with auto-refresh every 3 seconds.
+Start, stop, and restart file-sharing and remote-access services directly from the settings page. Logs refresh automatically every few seconds.
 
 ### Save Configuration Flow
 
-- Step-by-step progress tracking with animated overlay
-- Active border indicator follows the current saving step
-- Save button disabled with spinner during save operations
-- Single gateway restart for all configuration changes
+- Step-by-step progress with animated overlay
+- Clear indicator follows the current saving step
+- Save button shows progress while saving
+- One restart applies all configuration changes
 
 ### Sticky Headers
 
-Fixed/sticky header across all pages — index, configure, snapshots, and workspace browser.
-
-### OpenClaw 2026.4.14
-
-Bundled OpenClaw bumped from 2026.4.12 to 2026.4.14 — 50+ bug fixes, no breaking changes.
+Fixed header across all pages — main screen, settings, snapshots, and workspace browser.
 
 ---
-
 ## 0.10.0 — April 13, 2026
 
-Major upgrade shipping OpenClaw 2026.4.12, password protection, and a new agent behavior configuration UI.
+Major upgrade shipping an updated agent engine, password protection, and a new screen for configuring how your agent behaves.
 
 ### Password Protection
 
-- Lock screen with password authentication for the MeAll Agents UI and API
-- Configurable session expiry (1h, 4h, 8h, 24h, never)
-- Login rate limiting
+- Lock screen with password for the MeAll App and its connections
+- Choose how long you stay signed in (1h, 4h, 8h, 24h, always)
+- Slows down repeated wrong guesses
 
-### Agent Behavior Configuration
+### Agent Behavior Settings
 
-- **Active Memory** — dedicated memory sub-agent that pulls in relevant preferences before each reply
-- **Dreaming** — enables the memory-wiki knowledge compilation stack
+- **Active Memory** — a dedicated memory helper that pulls in your relevant preferences before each reply
+- **Dreaming** — automatically compiles what the agent learns into a knowledge wiki
 
-### ElevenLabs TTS Improvements
+### ElevenLabs Voice Settings
 
-TTS provider and voice configuration written directly to `openclaw.json`. Auto-enable of ElevenLabs plugin during skill install.
+Voice and speech settings in plain language. Voice features turn on automatically when you install the skill.
 
 ### Reliability & Performance
 
-- **Single-restart save flow** — all config changes batched and applied in one gateway restart
-- **Post-finalize re-apply** — plugin enables and channel enables automatically retried after restart
-- Config reads via direct `cat openclaw.json` (~3s → ~0.3s)
-
-### OpenClaw 2026.4.12
-
-Sandbox engine upgraded from 2026.3.24 to 2026.4.12 — 11 stable releases of new capabilities and fixes including Active Memory plugin, Memory Wiki / Dreaming stack, video & music generation tools, strict SSRF defaults, and Ollama vision support.
+- **One restart applies everything** — all settings changes take effect together
+- **Settings survive restarts** — features you turn on stay on after a restart
+- **Settings open fast** — even with lots of providers configured
 
 ### Bug Fixes
 
-- Plugin enable/disable fails on fresh sandboxes — now retried automatically post-finalize
-- Workspace browser auth bypass for the `/browse` endpoint
-- License gate race condition
+- Features turn on and off reliably, even on brand-new sandboxes
+- Fixed a sign-in gap in the workspace file browser
+- Fixed license activation timing
 
 ---
-
 ## 0.9.6 — April 13, 2026
 
-Docker is now the default virtualization engine. New installs automatically use Docker — no configuration needed. Existing installs are migrated on first launch.
+Docker is now built in. New installs just work — no setup needed. Existing installs carry over on first launch.
 
 ---
-
 ## 0.9.5 — April 12, 2026
 
-Windows compatibility fixes.
+Windows fixes — large skill setups transfer cleanly, folder picking handles Windows paths, shared folders work, and packaged builds include everything the terminal needs.
 
 ### Bug Fixes
 
-- **Skill script transfer** — Large scripts no longer exceed Windows' 32,767 character command-line limit. All transfers now use stdin piping
-- **Folder picker** — Backslash paths properly escaped for `onclick` attribute injection
-- **Shared folders** — Docker inspect commands now work on Windows via argument arrays instead of single-quoted Go templates
-- **Folder browser security** — Added Windows drive letter detection
-- **Agent Chat and Sandbox Shell** — `web/node_modules` now included in packaged builds
+- **Skill setups** — Large skill files transfer without hitting Windows limits
+- **Folder picker** — Backslash paths handled correctly
+- **Shared folders** — Work on Windows as they do everywhere else
+- **Built-in terminal** — Packaged builds include everything it needs
 
 ---
-
 ## 0.9.4 — April 12, 2026
 
-Model curation and benchmark scores. All model lists modernized with real agent benchmark data.
+Hand-picked models with quality scores. All model lists now show real agent benchmark results.
 
 ### Provider Updates
 
-- **OpenAI** — Added `gpt-5.4-mini` (83%), removed legacy models
-- **Anthropic** — Fixed model IDs to use hyphenated form, `claude-sonnet-4.6` correctly shows 85%
-- **Groq** — Complete overhaul with current production and preview models
-- **OpenRouter** — Added `anthropic/claude-sonnet-4.6` and `openai/gpt-5.4`
-- **Ollama Cloud** — Expanded from 4 to 12 models, sorted by benchmark score
+- **OpenAI** — Newest small model added, old ones removed
+- **Anthropic** — Model names fixed so scores and availability display correctly
+- **Groq** — Full refresh with current production and preview models
+- **OpenRouter** — Latest Claude and GPT models added
+- **Ollama Cloud** — Expanded from 4 to 12 models, sorted by quality score
 
-Each model card now shows an **Agent Score** (% task completion) and **Avg Price** per task.
+Each model card now shows a **quality score** (% of tasks completed) and **average price** per task.
 
 ---
-
 ## 0.9.3 — April 12, 2026
 
-Feedback system, smarter agent prompts, and a critical skill injection race condition fix.
+Feedback system, clearer agent prompts, and a fix for disappearing setup instructions.
 
 ### Feedback System
 
-Users can submit bug reports and suggestions directly from the app via the **💬 Feedback** button. Submissions go to MeAll Technologies via Supabase.
+Send bug reports and suggestions directly from the app. No account needed.
 
-### Smarter Agent Prompts
+### Clearer Agent Prompts
 
-AGENTS.md has been significantly expanded:
+The agent's standing instructions were expanded:
 
-- **Runtime awareness** — Agents understand they run inside MeAll Agents powered by OpenClaw
-- **Skills catalog** — Agents proactively suggest enabling skills instead of attempting inferior workarounds
-- **Workspace Browser + Tunnel guidance** — Agents suggest skills for file sharing and remote access
-- **Feedback coaching** — Agents proactively suggest submitting feedback when users hit issues
-- **Technical preference** — Agents ask and respect the user's technical comfort level
+- **Knows its environment** — Agents understand they run inside MeAll Agents sandboxes
+- **Skills catalog** — Agents proactively suggest turning on skills instead of working around them
+- **File sharing + remote access guidance** — Agents suggest the right skills for sharing files and reaching the sandbox remotely
+- **Feedback coaching** — Agents suggest sending feedback when you hit issues
+- **Respects your level** — Agents ask and respect how technical you want them to be
 
-### Skill Injection Race Condition Fix
+### Setup Instructions Fix
 
-Installing skills before saving sandbox configuration for the first time was corrupting AGENTS.md. Fixed: skills deploy files without touching AGENTS.md, deferred instructions injected once workspace is ready.
+Adding skills before first saving a sandbox used to corrupt the setup instructions. Fixed: skills install cleanly, guidance is added once the workspace is ready.
 
 ---
-
 ## 0.9.2 — April 10, 2026
 
 ### New Skill: Slack Use
 
-Agents can read and send Slack messages, list channels, react to messages, and read canvas documents — even when Slack is not your communication channel with the agent.
+Connect chats, read and send messages, list channels, and react — even when Slack isn't how you talk to the agent.
 
-- **Two authentication modes** — App Token (xoxb/xoxp) or Browser Session (xoxd + xoxc)
-- **Full skill lifecycle** — Install, edit, and remove from the Settings UI
-- **arm64 support** — x86_64 binary runs transparently on Apple Silicon via QEMU
-
-### UI Improvements
-
-- Skill card content no longer clipped by `max-height: 200px`
-- Compact inline pill-style auth mode selector
+- **Two sign-in modes** — workspace app or browser session
+- **Full lifecycle** — Install, edit, and remove from Settings
+- **Works on Apple Silicon** — Intel tools run transparently
 
 ---
-
 ## 0.9.1 — April 9, 2026
 
 ### New Skill: Airbnb Search
 
-Search Airbnb listings directly from the agent — prices, ratings, and booking links with no API key required.
+Search listings directly from the agent — prices, ratings, and booking links, no extra sign-in required.
 
 ### New Models
 
-Added GLM-5.1:cloud to the Ollama models list.
+Added the newest compact model to the local model list.
 
 ---
-
 ## 0.9.0 — April 9, 2026
 
-A major release introducing ElevenLabs voice, MarkItDown document conversion, Slack & Discord support, product key activation, onboarding, and the removal of WSL2 in favor of Multipass + Docker.
+A major release introducing voice messages, document conversion, Slack & Discord support, product key activation, guided setup, and simpler virtualization — one built-in engine, no extra setup.
 
 ### ElevenLabs Voice Skill
 
-Full ElevenLabs TTS integration with 25+ voice options and guaranteed support for English, German, Spanish, Italian, and Portuguese. Voice preview and selection UI in the configure page.
+Full voice messages with 25+ voice options in English, German, Spanish, Italian, and Portuguese. Voice preview and selection in the settings page.
 
 ### MarkItDown Skill
 
-Convert PDF, Word, Excel, PowerPoint, HTML, images, audio, YouTube videos, CSV, JSON, and more to Markdown. Installs in an isolated Python venv.
+Convert PDFs, Word files, spreadsheets, presentations, web pages, images, audio, videos, and more to clean text. Installs self-contained.
 
-### Slack & Discord Channel Support
+### Slack & Discord Notifications
 
-Full CRUD for Slack channels and Discord guilds. Auto-enable with proper schema initialization. HowTo onboarding guides for bot tokens.
+Connect notification channels with step-by-step bot setup guides.
 
 ### Product Key Activation
 
-License key activation and validation system with MeAll Technologies' licenses backend. Gate sequence: Terms of Service → License → Onboarding.
+Sign in with your license key in three guided steps: welcome, setup check, ready.
 
-### Onboarding Experience
+### Guided Setup
 
-3-step onboarding for first-time users: Welcome → Docker Setup → Ready. Live polling auto-detects Docker availability. Onboarding state persisted in localStorage.
-
-### Architecture
-
-**WSL2 removed.** Virtualization now uses Multipass or Docker only.
+3-step first launch: Welcome → Setup Check → Ready. The app detects automatically when your computer is ready.
 
 ### Bug Fixes
 
-- OpenClaw version pinning fixed — new sandboxes pull pinned image version instead of `:latest`
-- AGENTS.md injection moved to post-start polling loop
-- Channel initialization fixed for Slack and Discord
+- New sandboxes always use the tested version instead of sometimes grabbing the newest
+- Setup instructions applied at the right moment
+- Chat channel setup fixed for Slack and Discord
 
 ---
-
 ## 0.8.0 — April 5, 2026
 
-Major release: embedded terminal, skills system, Ollama integration, Telegram groups support, and WSL2 removal.
+Major release: built-in terminal, skills system, local AI models, Telegram groups support, and one built-in engine.
 
-### Embedded Terminal (TUI)
+### Built-in Terminal
 
-Cross-platform terminal using `node-pty` — no external emulator dependencies. Consistent behavior across macOS, Windows, and Linux.
+A terminal that works the same on Mac, Windows, and Linux — no extra terminal app needed.
 
 ### Skills System
 
-- **Composio** — Full skill management with OAuth authentication
-- **Tunnel** — Cloudflared tunnels with password-protected auth gate
-- **Workspace Browser** — Python HTTP file browser at port 7000
-- **Proof Editor** — Collaborative markdown editing
+- **Composio** — Manage skills with easy sign-in
+- **Tunnel** — Share your sandbox publicly with a password-protected link
+- **Workspace Browser** — Browse and download your agent's files from a web page
+- **Proof Editor** — Edit documents together with your agent
 
 ### Ollama Integration
 
-Status check, model pull with real-time SSE progress, cancel endpoint, and pull progress modal in the web UI.
+Check what's installed, download models with live progress, cancel anytime, and watch progress in the app.
 
 ### Telegram Groups Support
 
-Telegram groups management with configuration endpoints and UI integration.
-
-### Architecture
-
-**WSL2 backend removed.** Multipass and Docker are the only supported engines.
+Manage Telegram groups and channels from settings.
 
 ---
-
 ## 0.7.2 — March 15, 2026
 
-Further startup resilience improvements for macOS "Unknown system error -86" issues.
+More startup fixes for Macs that show "Unknown system error" on launch.
 
 ### Improvements
 
-- Broadened architecture mismatch detection
-- Switched to `app.isPackaged` for accurate environment detection
-- Extended fallback timeout to 2 seconds
-- Improved error dialog with runtime architecture info
+- Automatic detection when the wrong system version was installed
+- Accurate startup environment detection
+- Longer fallback wait, clearer error message with system details
 
 ---
-
 ## 0.7.1 — March 15, 2026
 
-Hotfix for critical startup issues in v0.7.0. Automatic fallback to system Node.js when bundled binary is incompatible with the host architecture.
+Hotfix for startup problems in v0.7.0. Falls back to your computer's own Node.js automatically when the built-in one doesn't fit.
 
 ---
-
 ## 0.7.0 — March 15, 2026
 
-Native Docker support and portable snapshots.
+Built-in sandbox engine and portable backups.
 
-### Docker Virtualization Engine
+### Sandbox Engine
 
-Native Docker support across macOS, Linux, and Windows (via Docker Desktop). Sudo access and sandbox rebuilds from the UI.
+Built-in engine support across Mac, Linux, and Windows. Sudo access and sandbox rebuilds from the interface.
 
-### Portable Snapshots
+### Portable Backups
 
-Engine-agnostic snapshots — create in one engine, restore in another without losing state.
+Back up a whole sandbox and restore it on another computer without losing anything.
 
 ### Shared Folder Management
 
-Redesigned UI for managing shared folders between host and sandbox.
-
-### Technical
-
-- Electron migrated to CommonJS (`.cjs`)
-- Backend refactoring in `commands.js`, `wsl.js`, and `multipass.js`
+Redesigned screen for managing shared folders between your computer and the sandbox.
 
 ---
-
 ## 0.6.0 — March 6, 2026
 
-Centralized settings modal, provider configuration guides, dark mode, and Terms and Conditions.
+Central settings screen, provider setup guides, dark mode, and Terms and Conditions.
 
-### Settings Modal
+### Settings Screen
 
-Refactored to a streamlined, centralized, reusable modal component.
+One organized place for all settings instead of scattered screens.
 
 ### Provider Setup Guides
 
-Dynamic "How-To" modal system providing in-context configuration guides for AI providers and channels.
+Step-by-step guides inside the app for connecting AI providers and channels.
 
 ### Dark Mode
 
-Seamless light/dark mode toggling adapted globally.
+Light and dark themes you can switch anytime.
 
 ---
-
 ## 0.5.1 — February 15, 2026
 
-WSL2 performance improvements, unified logging, and OpenRouter model additions.
+Performance improvements, one log file, and new models.
 
-### WSL2 Optimization
+### Faster Startup
 
-- `.wslconfig` management API
-- 8GB Memory, 4 Processors auto-configuration
-- Port isolation per sandbox on Windows
+- Automatic performance tuning on Windows
+- 8GB memory and 4 processors configured for you
+- Sandboxes kept separate on Windows
 
-### Unified Logging
+### One Log File
 
-All logs written to `~/meall-agents/`. Execution timing with millisecond precision.
+All logs in one place with precise timing.
 
 ---
-
 ## 0.5.0 — February 13, 2026
 
-Multi-platform binaries, automated CI/CD, and sandbox snapshots.
+Multi-platform downloads, automated quality checks, and sandbox backups.
 
-### Multi-Platform Binaries
+### Multi-Platform Downloads
 
-Automatic builds for macOS (Intel + ARM64), Windows (x64), and Linux (x64 + ARM64) on every release.
+Ready-made downloads for Mac (Intel + Apple chip), Windows, and Linux on every release.
 
-### Automated QA
+### Automated Quality Checks
 
-ESLint, Prettier, and test runner enforced on every pull request.
+Spelling, formatting, and tests run automatically on every proposed change.
 
-### Sandbox Snapshots
+### Sandbox Backups
 
-Create, restore, export/import, and delete complete sandbox state backups.
+Create, restore, and delete complete sandbox backups.
 
 ---
-
 ## 0.4.3 — February 11, 2026
 
-Telegram bot now responds immediately after saving configuration — plugin auto-enabled on bot token save.
+Your chat bot answers immediately after you save settings — no restart dance.
 
 ---
-
 ## 0.4.2 — February 9, 2026
 
-Changed default ports to avoid conflicts:
+New default addresses so nothing clashes with your other apps:
 
-- **Backend API:** 3001 → **6969**
-- **Web UI:** 3000 → **9696**
+- **App and connections:** 3001 → **6969**
+- **Screens in your browser:** 3000 → **9696**
 
 ---
-
 ## 0.4.1 — February 9, 2026
 
-Windows VM fixes: auto-increment naming and setup script bundling.
+Windows fixes: automatic names and setup files included where needed.
 
 ---
-
 ## 0.4.0 — February 9, 2026
 
-API key configuration redesign. `.env` approach with intelligent batch processing and smart change detection.
+Simpler, faster API key setup. Save any combination of providers in one go.
 
-- Configure any combination of 8 providers in one operation
-- 30-40s operations now take 5-10s
-- Skip unnecessary gateway restarts
+- Set up all your AI providers in one operation
+- Saving takes seconds instead of half a minute
+- No unnecessary restarts while saving
 
 ---
-
 ## 0.3.0 — February 6, 2026
 
-Full Electron packaging for macOS and Windows. Native `.app` for macOS, NSIS installer for Windows. Bundled Node.js binary.
+Full packaging for Mac and Windows. Installs like a normal app, auto-updates included.
 
 ---
-
 ## 0.2.1 — February 5, 2026
 
-Stop button added to VM dropdown menu.
+Stop button added to the sandbox menu.
 
 ---
-
 ## 0.2.0 — February 5, 2026
 
-Security hardening (command injection and XSS prevention), full keyboard navigation, ARIA accessibility, and unified header with glowing logo.
+Security hardening, full keyboard control, high-contrast support, and a unified header.
 
 ---
-
 ## 0.1.0 — February 5, 2026
 
-Foundation release. End-to-end setup with core features working.
+First release. Setup works end to end with the core features.
 
-- Cross-platform support (Windows, macOS, Linux)
-- Virtualized agent sandboxes
-- Multi-provider AI configuration
+- Works on Windows, Mac, and Linux
+- Sandboxes for your agents
+- Connect any AI provider
 - Telegram integration
-- Host folder mounting
-- Keep-alive mechanisms
-
-Everything works. First version ready for testing and feedback.
+- Shared folders with your computer
+- Keeps running in the background
