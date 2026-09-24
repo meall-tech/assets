@@ -1,3 +1,8 @@
+## 0.26.1 — September 24, 2026
+
+MeAll Agents 0.26.1 is a hotfix release: **the distributable CLI binaries build again**.
+
+---
 ## 0.22.0 — June 21, 2026
 
 **A quick, punchy security & reliability bump.**
