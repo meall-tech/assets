@@ -8,7 +8,6 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 ASSET_DIR="$ROOT_DIR/software/meall-agents"
 VERSION_FILE="$ASSET_DIR/VERSION.txt"
 CHANGELOG_FILE="$ASSET_DIR/CHANGELOG.md"
-COMMIT_TRAILER="Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
 
 FORCE=0
 CHECK_ONLY=0
@@ -331,7 +330,7 @@ if (( DO_COMMIT )); then
     exit 0
   fi
   git -C "$ROOT_DIR" add "$ASSET_DIR"
-  git -C "$ROOT_DIR" commit -m "Update MeAll Agents binaries to $latest_version" -m "$COMMIT_TRAILER"
+  git -C "$ROOT_DIR" commit -m "Update MeAll Agents binaries to $latest_version"
 fi
 
 if (( DO_PUSH )); then
