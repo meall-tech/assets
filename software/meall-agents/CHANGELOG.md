@@ -1,3 +1,8 @@
+## 0.27.0 — October 8, 2026
+
+Your agents now feel more present: call them live, see them working, and manage their identities from a redesigned dashboard. This release also makes the Cockpit easier to navigate and improves reliability when connecting to remote sandboxes.
+
+---
 ## 0.26.1 — September 24, 2026
 
 MeAll Agents 0.26.1 is a hotfix release: **the downloads on the website work again**.
