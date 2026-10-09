@@ -1,3 +1,8 @@
+## 0.27.1 — October 9, 2026
+
+This hotfix makes live voice calls and sandbox settings more dependable. Agents with full sandbox access can carry out tasks during calls without getting stuck on confirmation requests, and saving settings no longer fails on existing providers or model cleanup.
+
+---
 ## 0.27.0 — October 8, 2026
 
 Your agents now feel more present: call them live, see them working, and manage their identities from a redesigned dashboard. This release also makes the Cockpit easier to navigate and improves reliability when connecting to remote sandboxes.
