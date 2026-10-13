@@ -9,6 +9,32 @@ PDF previews open correctly in the MeAll App, with the touch-friendly viewer als
 Includes all the mobile dashboard, sharing, attachment previews, touch zoom and usage improvements from 0.28.0.
 
 ---
+## 0.28.0 — October 12, 2026
+
+MeAll feels more at home on your phone, with a responsive sandbox stack, full-screen feature views and cleaner settings. Share files and links straight to an agent, preview attachments in Cockpit, and keep conversations moving with clearer activity and notifications.
+
+## Mobile and sharing
+
+- Sandbox cards adapt to your screen, remember your selection and support deliberate swipe navigation.
+- Cleaner settings and full-screen mobile dialogs keep controls within reach.
+- Share pictures, documents and links to a sandbox and agent with an optional message on supported Android devices. Choose agents instantly from cached avatars and follow the queued message into chat.
+- Receive share confirmations and improved conversation notifications, including native desktop notifications.
+
+## Cockpit
+
+- Save Markdown edits from the file header; refresh warns before discarding unsaved changes.
+- Upload any file, with clear attachment previews and an Open action.
+- Read PDFs on mobile and pinch to zoom PDF pages and images. Application screens stay fixed while the terminal supports font-size gestures.
+- Today and This week usage include current sessions and respect your timezone.
+- More responsive chat, clearer live activity, reliable scheduled-task history and improved file navigation.
+- Rich interactive agent replies and clearer private and public Hub access.
+
+## Fixes
+
+- More dependable app loading, notification links and sandbox operations.
+- Repaired accommodation search and improved conversation controls.
+
+---
 ## 0.27.1 — October 9, 2026
 
 This hotfix makes live voice calls and sandbox settings more dependable. Agents with full sandbox access can carry out tasks during calls without getting stuck on confirmation requests, and saving settings no longer fails on existing providers or model cleanup.
