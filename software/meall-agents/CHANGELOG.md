@@ -1,3 +1,14 @@
+## 0.28.1 — October 12, 2026
+
+Live calls now show a helpful message when the OpenAI connection fails: check your API key or sign in again, then retry or try later. The message does not assume a transport failure always means an invalid key.
+
+Sandbox model, skill and channel descriptions now stay inside the visible window, including near corners and in narrow layouts.
+
+PDF previews open correctly in the MeAll App, with the touch-friendly viewer also available in narrow windows.
+
+Includes all the mobile dashboard, sharing, attachment previews, touch zoom and usage improvements from 0.28.0.
+
+---
 ## 0.27.1 — October 9, 2026
 
 This hotfix makes live voice calls and sandbox settings more dependable. Agents with full sandbox access can carry out tasks during calls without getting stuck on confirmation requests, and saving settings no longer fails on existing providers or model cleanup.
