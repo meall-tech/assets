@@ -13,14 +13,14 @@ Includes all the mobile dashboard, sharing, attachment previews, touch zoom and 
 
 MeAll feels more at home on your phone, with a responsive sandbox stack, full-screen feature views and cleaner settings. Share files and links straight to an agent, preview attachments in Cockpit, and keep conversations moving with clearer activity and notifications.
 
-## Mobile and sharing
+### Mobile and sharing
 
 - Sandbox cards adapt to your screen, remember your selection and support deliberate swipe navigation.
 - Cleaner settings and full-screen mobile dialogs keep controls within reach.
 - Share pictures, documents and links to a sandbox and agent with an optional message on supported Android devices. Choose agents instantly from cached avatars and follow the queued message into chat.
 - Receive share confirmations and improved conversation notifications, including native desktop notifications.
 
-## Cockpit
+### Cockpit
 
 - Save Markdown edits from the file header; refresh warns before discarding unsaved changes.
 - Upload any file, with clear attachment previews and an Open action.
@@ -29,7 +29,7 @@ MeAll feels more at home on your phone, with a responsive sandbox stack, full-sc
 - More responsive chat, clearer live activity, reliable scheduled-task history and improved file navigation.
 - Rich interactive agent replies and clearer private and public Hub access.
 
-## Fixes
+### Fixes
 
 - More dependable app loading, notification links and sandbox operations.
 - Repaired accommodation search and improved conversation controls.
