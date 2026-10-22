@@ -1,3 +1,10 @@
+## 0.29.2 — October 22, 2026
+
+The dashboard now reads OpenClaw's current keyed agent roster. Your configured Main agent stays visible when you add another agent, agent counts stay accurate, and deleted agents are not revived from old registry metadata or workspace files.
+
+Includes the 0.29.1 profile-name correction and all 0.29.0 improvements: first-agent personality setup, safe cloud agent creation, reliable Hub startup, the shared live browser and the updated MeAll App workspace.
+
+---
 ## 0.29.1 — October 22, 2026
 
 First-agent setup now updates the agent's name correctly when its workspace uses OpenClaw's plain-text identity fields. Choosing a personality or editing a profile replaces the original fields instead of leaving an older name ahead of the new values. Existing duplicate profile fields are reconciled without removing personal notes.
