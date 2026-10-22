@@ -1,3 +1,10 @@
+## 0.29.1 — October 22, 2026
+
+First-agent setup now updates the agent's name correctly when its workspace uses OpenClaw's plain-text identity fields. Choosing a personality or editing a profile replaces the original fields instead of leaving an older name ahead of the new values. Existing duplicate profile fields are reconciled without removing personal notes.
+
+Includes all 0.29.0 improvements: first-agent personality setup, safe cloud agent creation, reliable Hub startup, the shared live browser and the updated MeAll App workspace.
+
+---
 ## 0.29.0 — October 22, 2026
 
 Meet your first agent: a fresh workspace now offers “Set up your first agent” instead of an unfinished Main profile. Choose a built-in personality or create your own; your existing main agent is updated in place, without losing its workspace or starting a duplicate agent.
