@@ -1,3 +1,20 @@
+## 0.29.0 — October 22, 2026
+
+Meet your first agent: a fresh workspace now offers “Set up your first agent” instead of an unfinished Main profile. Choose a built-in personality or create your own; your existing main agent is updated in place, without losing its workspace or starting a duplicate agent.
+
+Creating additional agents in the cloud now respects workspace ownership, fixing the unsafe identity-file error that could prevent an agent from being added. The cloud Hub also opens reliably instead of getting stuck in repeated recovery reloads.
+
+Your agents now have a shared browser. Follow their browsing live, switch between tabs and take over when you need to sign in or help with a task. Browser controls and pointer positioning are improved on desktop and mobile, including when the on-screen keyboard opens.
+
+The MeAll App gains a multitasking workspace, clearer navigation and faster access to browser and session views. Shared links can open in the browser view you choose.
+
+MeAll Agents Cloud starts with a prepared sandbox, so a new subscription can open its workspace without repeating the initial setup. Choose your own instance name during checkout and keep your hosted workspace separate from your other deployments.
+
+Calls preserve voice continuity more reliably, with steadier connection setup. App updates are easier to find, and sandbox upgrades are coordinated with the installed app version.
+
+Includes the latest sandbox compatibility and provider/model catalog updates, alongside improvements to hosted deployment reliability.
+
+---
 ## 0.28.1 — October 12, 2026
 
 Live calls now show a helpful message when the OpenAI connection fails: check your API key or sign in again, then retry or try later. The message does not assume a transport failure always means an invalid key.
