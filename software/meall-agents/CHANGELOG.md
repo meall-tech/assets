@@ -1,3 +1,20 @@
+## 0.29.3 — October 25, 2026
+
+## Keep your work when cloud service ends
+
+New managed cloud subscriptions stop agent work when paid access and any payment grace period end. Your workspace remains available for export for 30 days, with a dedicated sign-in page for downloading your files without restarting your agents.
+
+Restoring service requires a fresh subscription check. Existing desktop installations and previously provisioned cloud instances keep their current behavior.
+
+Workspace downloads also remain available if the agent engine is offline. The export page warns when automatic stopping needs attention.
+
+## Make shared Hubs your own
+
+Add your own logo, choose whether to show the public Hub footer, or replace its credit line with your own text. Your uploaded logo also becomes the Hub favicon. Private Hubs no longer show footer credits.
+
+Includes all 0.29.2 improvements to agent profiles, safe cloud agent creation and reliable Hub startup.
+
+---
 ## 0.29.2 — October 22, 2026
 
 The dashboard now reads OpenClaw's current keyed agent roster. Your configured Main agent stays visible when you add another agent, agent counts stay accurate, and deleted agents are not revived from old registry metadata or workspace files.
