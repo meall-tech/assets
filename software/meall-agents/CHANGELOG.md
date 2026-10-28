@@ -1,3 +1,12 @@
+## 0.29.4 — October 28, 2026
+
+## Optional usage sharing
+
+Help improve MeAll Agents by choosing to share how you use its features. Sharing is off unless you opt in, and you can turn it off again in Info & Settings. If you previously opted in, please review the updated choice before sharing resumes.
+
+Usage sharing records feature actions and random identifiers for installations and sessions. It does not send your conversations, prompts, files, account information or settings contents.
+
+---
 ## 0.29.3 — October 25, 2026
 
 ## Keep your work when cloud service ends
