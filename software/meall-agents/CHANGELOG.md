@@ -1,3 +1,12 @@
+## 0.29.6 — October 30, 2026
+
+## Reliable model setup
+
+Saved OpenAI subscription access now appears in the model picker without waiting for a slow status check. The check is bounded and scoped so it cannot stall settings.
+
+DeepSeek setup now installs a plugin version compatible with the sandbox's OpenClaw runtime, avoiding settings-save failures caused by a newer plugin release.
+
+---
 ## 0.29.5 — October 30, 2026
 
 ## License checks and offline reliability
