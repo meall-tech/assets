@@ -1,3 +1,18 @@
+## 0.29.5 — October 30, 2026
+
+## License checks and offline reliability
+
+MeAll Agents now checks an existing license once a day instead of every 30 minutes. Temporary network or service outages no longer lock you out; an existing activation remains usable offline. A license is blocked only after the server confirms that the key is invalid or active on another machine. As a result, moving or revoking a key may take up to 24 hours to reach an already-running installation.
+
+## More reliable snapshots
+
+Create and restore large sandbox snapshots more reliably, including archives that exceed typical upload limits.
+
+## Shop skill
+
+Agents can discover products, prepare carts, and look up Shop orders with the new Shop skill. Purchases still require your explicit approval.
+
+---
 ## 0.29.4 — October 28, 2026
 
 ## Optional usage sharing
