@@ -1,3 +1,14 @@
+## 0.29.7 — November 2, 2026
+
+## Dashboard update notices
+
+New-version notices float over the dashboard instead of pushing its content down. You can dismiss a notice; it stays hidden until a newer update is available. Remote dashboards show update information without a desktop download button.
+
+## Agent collaboration in Cockpit
+
+Messages from other agents now show who sent them. Subagent task handoffs appear expanded with the actual task prompt, while internal handoff instructions stay out of the conversation.
+
+---
 ## 0.29.6 — October 30, 2026
 
 ## Reliable model setup
