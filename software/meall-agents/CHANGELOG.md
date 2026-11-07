@@ -1,3 +1,24 @@
+## 0.29.8 — November 7, 2026
+
+More reliable sandbox upgrades, model settings, voice calls, and scheduled conversations.
+
+## Reliable sandbox upgrades and settings
+
+Sandbox upgrades preserve your saved provider credentials, model selections, agent identities, and scheduled jobs. Provider and model settings remain editable after upgrading, including subscription-backed access and separate model choices for images and other tasks.
+
+After updating the app, update your existing sandboxes from the dashboard to apply the sandbox improvements.
+
+## More reliable voice calls
+
+Calls pick up with the selected agent's identity and recent conversation context. Recent work and finalized speech remain available across calls, and hanging up allows the final conversation history to finish saving.
+
+## Cleaner scheduled conversations
+
+Heartbeat checks that skip without creating a conversation no longer fill Cockpit's session sidebar with unreadable failed entries. Actual runs and their history remain available.
+
+When changing a scheduled job to a different model provider, Cockpit now requires a compatible account selection instead of silently retaining an incompatible account.
+
+---
 ## 0.29.7 — November 2, 2026
 
 ## Dashboard update notices
