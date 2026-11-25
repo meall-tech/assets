@@ -1,3 +1,12 @@
+## 0.29.11 — November 25, 2026
+
+Make hosted seed memory indexing respect Gateway state ownership.
+
+## Reliable hosted seed preparation
+
+The release builder now stops the temporary sandbox Gateway while indexing the build-only memory entry, then restarts and health-checks the sandbox before creating the seed. Customer homes and running sandboxes are unchanged.
+
+---
 ## 0.29.8 — November 7, 2026
 
 More reliable sandbox upgrades, model settings, voice calls, and scheduled conversations.
